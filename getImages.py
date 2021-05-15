@@ -195,9 +195,6 @@ def multiple(config_path, in_path, map_path, out_path):
                 #cv2.imshow(classes[label],image)
                 #cv2.waitKey(0)
                 #cv2.destroyAllWindows()
-            cv2.imshow('test',image)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
             print(os.path.join(out_image_path, image_path[:-5]+'.jpeg'))
             cv2.imwrite(os.path.join(out_image_path, image_path[:-5]+'.jpeg'), image)
 
