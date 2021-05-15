@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 #
-# Author: Kazuto Nakashima
-# URL:    https://kazuto1011.github.io
-# Date:   07 January 2019
+# Authors: Bernat Felip, Kazuto Nakashima
+# URL:    https://sirbernardphilip.github.io, https://kazuto1011.github.io
+# Date:   14 May 2021
 
 from __future__ import absolute_import, division, print_function
 
