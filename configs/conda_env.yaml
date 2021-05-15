@@ -1,5 +1,6 @@
 name: deeplab-pytorch
 dependencies:
+  - pip
   - click
   - conda-forge::pydensecrf
   - cudatoolkit=10.2
