@@ -24,6 +24,9 @@ from libs.models import *
 from libs.utils import DenseCRF
 
 
+banned = ["wall", "bridge", "bush", "ceiling", "carpet", "building", "floor", "gravel", "stone", "grass", "road", "roof", "snow", "wall"]
+
+
 def get_device(cuda):
     cuda = cuda and torch.cuda.is_available()
     device = torch.device("cuda" if cuda else "cpu")
@@ -166,7 +169,13 @@ def multiple(config_path, in_path, map_path, out_path):
             if(not os.path.exists(out_image_path)):
                 os.mkdir(out_image_path)
             # Show result for each class
-            for i, label in enumerate(labels):
+            for i, label in enumerate(labels)):
+                found = False
+                for ban in banned:
+                    if ban in classes[label]:
+                        found = True
+                if(found):
+                    continue
                 mask = np.zeros([256,513,3], np.uint8)
                 mask[:,:,0] = ((labelmap == label)*255).astype(np.uint8)
                 mask[:,:,1] = ((labelmap == label)*255).astype(np.uint8)
