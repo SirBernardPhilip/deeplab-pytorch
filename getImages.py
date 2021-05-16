@@ -169,7 +169,7 @@ def multiple(config_path, in_path, map_path, out_path):
             if(not os.path.exists(out_image_path)):
                 os.mkdir(out_image_path)
             # Show result for each class
-            for i, label in enumerate(labels)):
+            for i, label in enumerate(labels):
                 found = False
                 for ban in banned:
                     if ban in classes[label]:
